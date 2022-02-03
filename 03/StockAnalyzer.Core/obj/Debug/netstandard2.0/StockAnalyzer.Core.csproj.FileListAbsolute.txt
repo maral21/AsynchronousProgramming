@@ -1,0 +1,10 @@
+C:\Proyectos\AsynchronousProgramming\03\StockAnalyzer.Core\bin\Debug\netstandard2.0\StockAnalyzer.Core.deps.json
+C:\Proyectos\AsynchronousProgramming\03\StockAnalyzer.Core\bin\Debug\netstandard2.0\StockAnalyzer.Core.dll
+C:\Proyectos\AsynchronousProgramming\03\StockAnalyzer.Core\bin\Debug\netstandard2.0\StockAnalyzer.Core.pdb
+C:\Proyectos\AsynchronousProgramming\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.csproj.AssemblyReference.cache
+C:\Proyectos\AsynchronousProgramming\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos\AsynchronousProgramming\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.AssemblyInfoInputs.cache
+C:\Proyectos\AsynchronousProgramming\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.AssemblyInfo.cs
+C:\Proyectos\AsynchronousProgramming\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.csproj.CoreCompileInputs.cache
+C:\Proyectos\AsynchronousProgramming\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.dll
+C:\Proyectos\AsynchronousProgramming\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.pdb
