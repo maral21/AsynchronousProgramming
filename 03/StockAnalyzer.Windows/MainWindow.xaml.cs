@@ -37,11 +37,21 @@ namespace StockAnalyzer.Windows
             Search.Content = "Cancel";
             #endregion
 
-            var loadLineasTask =  Task.Run(() =>
-                {
-                    var lines = File.ReadAllLines(@"ABC.csv");
-                    return lines;
-                });
+            if (cancellationTokenSource != null)
+            {
+                cancellationTokenSource.Cancel();
+                cancellationTokenSource = null;
+                return;
+            }
+
+            cancellationTokenSource = new CancellationTokenSource();
+
+            cancellationTokenSource.Token.Register(() =>
+            {
+                Notes.Text += "Cancellation Requested";
+            });
+
+            var loadLineasTask = SearchForStocks(cancellationTokenSource.Token);
 
             var processStocksTask = loadLineasTask.ContinueWith(t =>
             {
@@ -70,7 +80,10 @@ namespace StockAnalyzer.Windows
                 {
                     Stocks.ItemsSource = data.Where(price => price.Ticker == Ticker.Text);
                 });
-            }, TaskContinuationOptions.OnlyOnRanToCompletion);
+            },
+                cancellationTokenSource.Token,
+                TaskContinuationOptions.OnlyOnRanToCompletion,
+                TaskScheduler.Current);
 
             loadLineasTask.ContinueWith(t =>
             {
