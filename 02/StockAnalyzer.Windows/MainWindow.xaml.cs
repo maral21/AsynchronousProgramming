@@ -18,7 +18,7 @@ namespace StockAnalyzer.Windows
             InitializeComponent();
         }
 
-        private void Search_Click(object sender, RoutedEventArgs e)
+        private async void Search_Click(object sender, RoutedEventArgs e)
         {
             #region Before loading stock data
             var watch = new Stopwatch();
@@ -27,13 +27,7 @@ namespace StockAnalyzer.Windows
             StockProgress.IsIndeterminate = true;
             #endregion
 
-            var client = new WebClient();
-
-            var content = client.DownloadString($"http://localhost:61363/api/stocks/{Ticker.Text}");
-
-            var data = JsonConvert.DeserializeObject<IEnumerable<StockPrice>>(content);
-
-            Stocks.ItemsSource = data;
+            await GetStocks();
 
             #region After stock data is loaded
             StocksStatus.Text = $"Loaded stocks for {Ticker.Text} in {watch.ElapsedMilliseconds}ms";
@@ -51,6 +45,30 @@ namespace StockAnalyzer.Windows
         private void Close_OnClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        public async Task GetStocks()
+        {
+            using (var client = new HttpClient())
+            {
+
+                var response = await client.GetAsync($"http://localhost:61363/api/stocks/{Ticker.Text}");
+
+                try
+                {
+                    response.EnsureSuccessStatusCode(); // will throw an exception if the code result is not 200 OK
+
+                    var content = await response.Content.ReadAsStringAsync();
+
+                    var data = JsonConvert.DeserializeObject<IEnumerable<StockPrice>>(content);
+
+                    Stocks.ItemsSource = data;
+                }
+                catch (Exception ex)
+                {
+                    Notes.Text += ex.Message;
+                }
+            }
         }
     }
 }

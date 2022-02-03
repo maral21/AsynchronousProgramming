@@ -229,6 +229,5 @@ C:\Proyectos\AsynchronousProgramming\02\StockAnalyzer.Windows\obj\Debug\StockAna
 C:\Proyectos\AsynchronousProgramming\02\StockAnalyzer.Windows\obj\Debug\StockAnalyzer.Windows.Properties.Resources.resources
 C:\Proyectos\AsynchronousProgramming\02\StockAnalyzer.Windows\obj\Debug\StockAnalyzer.Windows.csproj.GenerateResource.cache
 C:\Proyectos\AsynchronousProgramming\02\StockAnalyzer.Windows\obj\Debug\StockAnalyzer.Windows.csproj.CoreCompileInputs.cache
-C:\Proyectos\AsynchronousProgramming\02\StockAnalyzer.Windows\obj\Debug\StockAnalyzer.Windows.csproj.CopyComplete
 C:\Proyectos\AsynchronousProgramming\02\StockAnalyzer.Windows\obj\Debug\StockAnalyzer.Windows.exe
 C:\Proyectos\AsynchronousProgramming\02\StockAnalyzer.Windows\obj\Debug\StockAnalyzer.Windows.pdb
